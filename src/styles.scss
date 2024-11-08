@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1C531D;
+  font-family: 'Open Sans', serif;
+  color: #f4f4f4;
+  width: 1200px;
+  margin: 0 auto;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+}
+
+header {
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+main {
+  .cards {
+    .card {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      animation: spawn 1s;
+
+      img {
+        width: 200px;
+        height: 307px;
+      }
+      
+      .card-front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: transform 1s linear;
+        transform: rotateY(180deg);
+      }
+
+      .card-back {
+        transition: transform 1s linear;
+      }
+    }
+  }
+
+  #gameOver {
+    text-align: center;
+    min-height: 150px;
+    margin-top: 2rem;
+
+    div {
+      display: none;
+      
+      #result {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+
+      button {
+        color: #f4f4f4;
+        background-color: #238AB6;
+        border: none;
+        font-weight: 600;
+        font-size: 1.5rem;
+        padding: 0.8rem 3rem;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #207ea7;
+        }
+
+        &:active {
+          background-color: #1d759a;
+        }
+      }
+    }
+  }
+}
+
+@keyframes spawn {
+  0% {
+    transform: translate(-100svh, -100svh)
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
